@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Raeu
+        psr4_prefix: Raeu
+        src_path: app
