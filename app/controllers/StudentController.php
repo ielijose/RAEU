@@ -7,12 +7,12 @@ class StudentController extends BaseController {
 	 * GET /branch
 	 *
 	 * @return Response
-	 */        
+	 */
 	public function index()
 	{
 		if(Input::has('ref') && Input::get('ref') == 'notify'){
 			$n = Notification::unread()->find((int) Input::get('n'));
-			$n->read();			
+			$n->read();
 		}
 
 		$students = Student::all();
@@ -40,13 +40,13 @@ class StudentController extends BaseController {
 	{
 		$inputs = Input::all();
 		//$inputs['template_id'] = 1;
-		
+
 
 		$student = new Student($inputs);
 		if ($student->save())
 		{
-			return Redirect::to('/estudiantes')->with('alert', ['type' => 'success', 'message' => 'El estudiante ha sido guardado.']);;			
-		}        
+			return Redirect::to('/estudiantes')->with('alert', ['type' => 'success', 'message' => 'El estudiante ha sido guardado.']);;
+		}
 		return Redirect::to('/estudiantes')->with('alert', ['type' => 'danger', 'message' => 'Ocurrio un error, intenta mas tarde.']);;
 
 	}
@@ -71,7 +71,7 @@ class StudentController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	
+
 	/**
 	 * Update the specified resource in storage.
 	 * PUT /branch/{id}
@@ -86,8 +86,8 @@ class StudentController extends BaseController {
 		$student->fill($inputs);
 		if ($student->save())
 		{
-			return Redirect::to('/estudiantes/' . $id)->with('alert', ['type' => 'success', 'message' => 'Datos guardados.']);			
-		}        
+			return Redirect::to('/estudiantes/' . $id)->with('alert', ['type' => 'success', 'message' => 'Datos guardados.']);
+		}
         return Redirect::to('/estudiantes/' . $id)->with('alert', ['type' => 'danger', 'message' => 'Ocurrio un error, intenta mas tarde.']);
 	}
 
@@ -105,23 +105,16 @@ class StudentController extends BaseController {
 	}
 
 
-
-	public function prestamos()
-	{		
-		$prestamos = Prestamo::orderBy('id', 'DESC')->get();
-		return View::make('backend.prestamos', compact('prestamos'));
-	}
-
 	public function prestar()
-	{		
+	{
 		$inputs = Input::all();
 		$prestamo = new Prestamo($inputs);
 		if ($prestamo->save())
-		{	
+		{
 			$prestamo->book->prestar();
 			return Redirect::to('/prestamos')->with('alert', ['type' => 'success', 'message' => 'El prestamo ha sido guardado.']);
-		}   
-		//dd($prestamo->getErrors());     
+		}
+		//dd($prestamo->getErrors());
 		return Redirect::to('/prestamos')->with('alert', ['type' => 'danger', 'message' => 'Ocurrio un error, intenta mas tarde.']);;
 
 	}
@@ -129,7 +122,7 @@ class StudentController extends BaseController {
 
 
 	public function devolver($id)
-	{		
+	{
 		$prestamo = Prestamo::find($id);
 		$prestamo->devolver();
 		if(Input::has('p')){
@@ -137,6 +130,6 @@ class StudentController extends BaseController {
 		}
 		return Redirect::to('/estudiantes/'.$prestamo->student_id)->with('alert', ['type' => 'success', 'message' => 'El libro ha sido devuelto.']);
 	}
-	
-    
+
+
 }

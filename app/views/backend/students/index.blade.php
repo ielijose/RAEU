@@ -29,22 +29,22 @@
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
-                                        <th>CI</th>                                                
+                                        <th>CI</th>
                                         <th>Télefono</th>
-                                        <th>Prestamos</th>
-                                        <th>Acciones</th>
+                                        <th class="text-center">Ayudas</th>
+                                        <th class="text-center">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($students as $key => $student)      
+                                    @foreach ($students as $key => $student)
                                     <tr>
                                         <td>{{ $student->name }}</td>
                                         <td>{{ $student->ci }}</td>
                                         <td>{{ $student->phone }}</td>
-                                        <td class="text-center">{{ count($student->prestamos)}}</td>
-                                        <td><a href="/estudiantes/{{ $student->id }}" class="btn btn-info">Ver mas</a></td>
+                                        <td class="text-center">{{ count($student->ayudas)}}</td>
+                                        <td class="text-center"><a href="/estudiantes/{{ $student->id }}" class="btn btn-info">Ver mas</a></td>
                                     </tr>
-                                    @endforeach                                           
+                                    @endforeach
 
                                 </tbody>
                             </table>

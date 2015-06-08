@@ -4,9 +4,9 @@
 <!--[if IE 8]>         <html class="no-js sidebar-large lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js sidebar-large"> <!--<![endif]-->
 
-<head>       
+<head>
     <meta charset="utf-8">
-    <title>Acceder :: Biblioteca</title>
+    <title>Acceder :: RAEU</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="" name="description" />
     <meta content="themes-lab" name="author" />
@@ -41,11 +41,7 @@
                     <div class="page-icon animated bounceInDown">
                         <img src="{{ asset('assets/img/account/user-icon.png') }}" alt="Key icon">
                     </div>
-                    <div class="login-logo">
-                        <a href="#">
-                            <img src="{{ asset('assets/img/account/login-logo.png') }}" alt="Company Logo">
-                        </a>
-                    </div>
+
                     <hr>
                     <div class="login-form">
                         <!-- BEGIN ERROR BOX -->
@@ -59,8 +55,8 @@
                         </div>
                         @endif
                         <!-- END ERROR BOX -->
-                        
-                                                
+
+
                         {{ Form::open(['route' => 'login', 'method' => 'POST', 'role' => 'form', 'novalidate']) }}
                             <div class="form-group">
                                 {{Form::email('email', null, ['class'=> 'input-field form-control user', 'placeholder' => 'Email'])}}
@@ -69,14 +65,14 @@
                                 {{Form::password('password', ['class' => 'input-field form-control password', 'placeholder' => 'Password'])}}
                             </div>
 
-                            <button type="submit" class="btn btn-login ladda-button" >Login</button>
-                        {{Form::close()}}            
+                            <button type="submit" class="btn btn-login ladda-button" >Entrar</button>
+                        {{Form::close()}}
                     </div>
                 </div>
             </div>
         </div>
-        
-        
+
+
     </div>
     <!-- END LOCKSCREEN BOX -->
     <!-- BEGIN MANDATORY SCRIPTS -->

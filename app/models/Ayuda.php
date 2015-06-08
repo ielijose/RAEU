@@ -1,32 +1,27 @@
 <?php
 use Carbon\Carbon;
 
-class Prestamo extends Model {
+class Ayuda extends Model {
 
-    protected $table = 'prestamos';
+    protected $table = 'helps';
     public $timestamp = true;
 
-    protected $fillable = ['student_id', 'book_id', 'status'];
-
+    protected $fillable = ['student_id', 'type', 'description', 'status'];
 
 	protected static $rules = [
         'student_id' => 'required',
-		'book_id' => 'required',
+		'type' => 'required',
     ];
-  
-    /* Scopes */   
-    
-    /* Relationships */ 
 
-    public function book(){
-    	return $this->BelongsTo('Book');
-    }
+    /* Scopes */
+
+    /* Relationships */
 
     public function student(){
     	return $this->BelongsTo('Student');
     }
 
-    /* Function */    
+    /* Function */
 
     public function getHumanDate($column = 'created_at')
     {
@@ -64,14 +59,14 @@ class Prestamo extends Model {
     public function getStatus()
     {
         switch ($this->status) {
-            case 'on':
-                return '<span class="label label-warning"> Prestado </span>';
+            case 'proccess':
+                return '<span class="label label-warning"> En proceso </span>';
                 break;
 
-            case 'off':
-                return '<span class="label label-success"> Devuelto </span>';
+            case 'approved':
+                return '<span class="label label-success"> Aprobada </span>';
                 break;
-            
+
             default:
                 # code...
                 break;

@@ -24,13 +24,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      */
     protected $hidden = array('password', 'remember_token');
 
-    protected $fillable = ['full_name', 'phone', 'picture', 'description', 'email', 'password', 'type', 'username'];
+    protected $fillable = ['full_name', 'ci', 'gender', 'phone', 'email', 'password', 'type'];
 
     public static $rules = [
     'full_name' => 'required',
+    'ci' => 'required',
     'phone' => 'required',
-    'description' => 'required',
-    'username' => 'required|unique:users',
     'email' => 'required|email|unique:users',
     'password' => 'required',
     ];
@@ -63,12 +62,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         });
     }
 
-    /* Scopes */       
+    /* Scopes */
 
-    public function scopeUsername($query, $username)
-    {
-        return $query->where('username', $username);
-    }
 
     /* functions */
 
@@ -83,7 +78,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public function getProfilePicture()
     {
-    	return "/assets/img/avatars/avatar1.png";    	
+    	return "/assets/img/avatars/avatar1.png";
     }
 
     public function getHumanDate()

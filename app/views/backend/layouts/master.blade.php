@@ -9,9 +9,9 @@
     <meta charset="utf-8">
 
     @if(Auth::user()->type == 'admin')
-        <title>Administrador - BackOffice MLMfunnels</title>
+        <title>Administrador - RAEU</title>
     @elseif(Auth::user()->type == 'user')
-        <title>Usuario - BackOffice MLMfunnels</title>
+        <title>Usuario - RAEU</title>
     @endif
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,7 @@
         @include('backend.layouts.user.navigation')
     @endif
 
-    
+
     <!-- END TOP MENU -->
     <!-- BEGIN WRAPPER -->
     <div id="wrapper">
@@ -74,12 +74,12 @@
     <script src="{{ asset('/assets/plugins/breakpoints/breakpoints.js') }}"></script>
     <script src="{{ asset('/assets/plugins/numerator/jquery-numerator.js') }}"></script>
     <script src="{{ asset('/assets/plugins/jquery.cookie.min.js') }}" type="text/javascript"></script>
-    
+
     <script src="{{ asset('/assets/plugins/moment-with-locales.min.js') }}" type="text/javascript"></script>
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     @yield('javascript')
     <!-- END  PAGE LEVEL SCRIPTS -->
-    
+
     <!-- END MANDATORY SCRIPTS -->
     <script src="{{ asset('/assets/js/application.js') }}"></script>
 </body>

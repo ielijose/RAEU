@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'biblioteca',
+			'database'  => 'raeu',
 			'username'  => 'forge',
 			'password'  => 'aIxQq4AdfmvibVD3VeR2',
 			'charset'   => 'utf8',

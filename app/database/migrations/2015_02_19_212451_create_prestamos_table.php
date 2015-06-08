@@ -12,18 +12,18 @@ class CreatePrestamosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('prestamos', function($table)
+		Schema::create('helps', function($table)
 		{
 			$table->increments('id');
 
 			$table->integer('student_id')->unsigned();
 			$table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
 
-			$table->integer('book_id')->unsigned();
-			$table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');	
+			$table->string('type');
+			$table->string('description');
 
-			$table->enum('status', ['on', 'off'])->default('on');
-					
+			$table->enum('status', ['proccess', 'approved'])->default('proccess');
+
 			$table->timestamps();
 		});
 	}
@@ -35,7 +35,7 @@ class CreatePrestamosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('prestamos');
+		Schema::drop('helps');
 	}
 
 }

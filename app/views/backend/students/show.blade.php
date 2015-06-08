@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('/assets/plugins/magnific/magnific-popup.css') }}">    
+<link rel="stylesheet" href="{{ asset('/assets/plugins/magnific/magnific-popup.css') }}">
 <link rel="stylesheet" href="{{ asset('/assets/plugins/datatables/dataTables.css') }}">
 <link rel="stylesheet" href="{{ asset('/assets/plugins/datatables/dataTables.tableTools.css') }}">
 <link rel="stylesheet" href="{{ asset('/frontend/assets/css/iconos.css') }}">
@@ -10,7 +10,7 @@
 
 <style>
 [class^="icon-"], [class*=" icon-"] {
-    font-size: 30px; 
+    font-size: 30px;
 }
 </style>
 @stop
@@ -30,8 +30,8 @@
             <div class="tabcordion">
                 <ul id="myTab" class="nav nav-tabs">
                     <li class="active"><a href="#general" data-toggle="tab">Datos</a></li>
-                    <li class=""><a href="#prestamos" data-toggle="tab">Prestamos</a></li>
-                   
+                    <li class=""><a href="#ayudas" data-toggle="tab">Ayudas</a></li>
+
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="general">
@@ -52,10 +52,18 @@
                                         </div>
                                     </div>
 
+
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Sección:</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="section" class="form-control" value="{{ $student->section }}">
+                                        <label class="col-sm-2 control-label">Instituto:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="instituto" class="form-control"  value="{{ $student->instituto }}" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Carrera:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="carrera" class="form-control"  value="{{ $student->carrera }}" required>
                                         </div>
                                     </div>
 
@@ -68,7 +76,7 @@
                                                     <option @if($student->gender == 'female') {{"selected"}}  @endif value="female">Femenino</option>
                                                 </select>
 
-                                            
+
                                         </div>
                                     </div>
 
@@ -98,35 +106,34 @@
                     </div>
 
 
-                    <div class="tab-pane fade in" id="prestamos">
+                    <div class="tab-pane fade in" id="ayudas">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 table-responsive table-blue filter-right">
 
                                 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-hover table-dynamic">
                                     <thead>
-                                        <tr>                                                
-                                            <th>Libro</th>                                             
+                                        <tr>
+                                            <th>Tipo</th>
+                                            <th>Descripción</th>
+                                            <th>Fecha</th>
                                             <th>Estado</th>
-                                            <th>Prestado</th>
-                                            <th>Devolver</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($student->prestamos as $key => $prestamo)      
-                                        <tr>
-                                            <td>{{ $prestamo->book->name }}</td>
-                                            <td>{{ $prestamo->getStatus() }}</td>
-                                            <td>{{ $prestamo->getHumanDate() }}</td>
-                                            <td>
-                                                @if($prestamo->status == 'on')
-                                                <a href="/devolver/{{ $prestamo->id }}" class="btn btn-info">Devolver</a>
-                                                @else
-                                                {{ $prestamo->getHumanDate('updated_at') }}
-                                                @endif
-
-                                            </td>
-                                        </tr>
-                                        @endforeach                                           
+                                        @if($student->ayudas->count() == 0 )
+                                            <tr>
+                                                <td colspan="4" class="text-center"><a href="/ayudas/create?student={{$student->id}}" class="btn btn-lg btn-primary">Asignar Ayuda</a></td>
+                                            </tr>
+                                        @else
+                                            @foreach ($student->ayudas as $key => $ayuda)
+                                            <tr>
+                                                <td>{{ $ayuda->type }}</td>
+                                                <td>{{ $ayuda->description }}</td>
+                                                <td>{{ $ayuda->getHumanDate() }}</td>
+                                                <td>{{ $ayuda->getStatus() }}</td>
+                                            </tr>
+                                            @endforeach
+                                        @endif
 
                                     </tbody>
                                 </table>
@@ -146,7 +153,7 @@
         </div>
     </div>
 
-   
+
 
 </div>
 

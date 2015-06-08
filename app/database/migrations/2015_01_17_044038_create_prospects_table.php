@@ -18,12 +18,13 @@ class CreateProspectsTable extends Migration {
 
 			$table->string('name');
 			$table->string('ci');
-			$table->string('section');
-			$table->enum('gender', ['male','female']);					    
+			$table->string('carrera');
+			$table->string('instituto');
+			$table->enum('gender', ['male','female']);
 			$table->string('phone');
 			$table->string('email');
-			$table->string('address');	
-					
+			$table->string('address');
+
 			$table->timestamps();
 		});
 	}

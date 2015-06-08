@@ -12,10 +12,10 @@
 <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/dropzone.css') }}">
 <style>
 [class^="icon-"], [class*=" icon-"] {
-    font-size: 30px; 
+    font-size: 30px;
 }
 
-div#dropzone{    
+div#dropzone{
     text-align: center;
     border: 2px dashed #555;
     height: 350px;
@@ -55,9 +55,16 @@ div#dropzone:hover{
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Sección:</label>
+                                    <label class="col-sm-2 control-label">Instituto:</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="section" data-parsley-minlength="1" class="form-control" required>
+                                        <input type="text" name="instituto" data-parsley-minlength="1" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Carrera:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="carrera" data-parsley-minlength="1" class="form-control" required>
                                     </div>
                                 </div>
 
