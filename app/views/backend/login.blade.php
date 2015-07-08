@@ -26,12 +26,24 @@
     #login-block {
         padding-top: 0px;1034032
     }
+    #bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        /* Preserve aspet ratio */
+        min-width: 100%;
+        min-height: 100%;
+    }
+
     </style>
     <!-- END PAGE LEVEL STYLE -->
     <script src="{{ asset('assets/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
 </head>
 
 <body class="login fade-in" data-page="login">
+    <img src="/assets/img/background/bg.jpg" id="bg" alt="">
+
     <!-- BEGIN LOGIN BOX -->
     <div class="container" id="login-block">
         <div class="row">
@@ -90,6 +102,8 @@
     <!-- END PAGE LEVEL SCRIPTS -->
 
     <script>
+        alert("H: "+$(window).height() + " / W: " +$(window).width() + " Aspect Ratio: " + ($(window).width()/$(window).height()));
+    </script>
 
 </body>
 
