@@ -45,6 +45,8 @@ Route::group(['before' => 'auth'], function () {
 		Route::get('/beneficiarios/delete/{id}', 'StudentController@destroy');
 		Route::post('/beneficiarios/update/{id}', 'StudentController@update');
 
+		Route::resource('user', 'UserController');
+
 		require (__DIR__ . '/routes/shared.php');
 	}
 

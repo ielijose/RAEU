@@ -80,36 +80,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     	return "/assets/img/avatars/avatar1.png";
     }
 
-    public function getHumanDate()
+     public function getHumanDate()
     {
-        $txt = 'carbon.timediff.';
-        $isNow = true;
-        $other = Carbon::now();
-        $delta = abs($other->diffInSeconds($this->created_at));
+        $txt = 'carbon.timediff.'; $isNow = true; $other = Carbon::now(); $delta = abs($other->diffInSeconds($this->created_at)); $divs = array('second' => Carbon::SECONDS_PER_MINUTE, 'minute' => Carbon::MINUTES_PER_HOUR, 'hour'   => Carbon::HOURS_PER_DAY, 'day'    => 30, 'month'  => Carbon::MONTHS_PER_YEAR ); $unit = 'year'; foreach ($divs as $divUnit => $divValue) {if ($delta < $divValue) {$unit = $divUnit; break; } $delta = floor($delta / $divValue); } if ($delta == 0) {$delta = 1; } $txt .= $unit; return Lang::choice($txt, $delta, compact('delta'));
+    }
 
-        $divs = array(
-           'second' => Carbon::SECONDS_PER_MINUTE,
-           'minute' => Carbon::MINUTES_PER_HOUR,
-           'hour'   => Carbon::HOURS_PER_DAY,
-           'day'    => 30,
-           'month'  => Carbon::MONTHS_PER_YEAR
-           );
-
-        $unit = 'year';
-        foreach ($divs as $divUnit => $divValue) {
-            if ($delta < $divValue) {
-                $unit = $divUnit;
-                break;
-            }
-
-            $delta = floor($delta / $divValue);
-        }
-
-        if ($delta == 0) {
-            $delta = 1;
-        }
-
-        $txt .= $unit;
-        return Lang::choice($txt, $delta, compact('delta'));
+    public function getComputerDate(){
+        return explode(' ', $this->created_at)[0];
     }
 }

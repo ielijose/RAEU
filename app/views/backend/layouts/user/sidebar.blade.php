@@ -14,6 +14,10 @@
                 <a href="/ayudas"><i class="fa fa-book"></i><span class="sidebar-text">Ayudas</span></a>
             </li>
 
+            <li class="<?= Request::is('*user*') ? 'current' : '' ?>">
+                <a href="/user"><i class="fa fa-user"></i><span class="sidebar-text">Usuarios</span></a>
+            </li>
+
             <br>
         </ul>
     </div>
