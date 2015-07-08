@@ -102,7 +102,7 @@
     <!-- END PAGE LEVEL SCRIPTS -->
 
     <script>
-        alert("H: "+$(window).height() + " / W: " +$(window).width() + " Aspect Ratio: " + ($(window).width()/$(window).height()));
+       // alert("H: "+$(window).height() + " / W: " +$(window).width() + " Aspect Ratio: " + ($(window).width()/$(window).height()));
     </script>
 
 </body>
