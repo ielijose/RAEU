@@ -5,8 +5,8 @@
                 <a href="/"><i class="fa fa-dashboard"></i><span class="sidebar-text">Datos</span></a>
             </li>
 
-            <li class="<?= Request::is('*estudiantes*') ? 'current' : '' ?>">
-                <a href="/estudiantes"><i class="fa fa-user"></i><span class="sidebar-text">Estudiantes</span></a>
+            <li class="<?= Request::is('*beneficiarios*') ? 'current' : '' ?>">
+                <a href="/beneficiarios"><i class="fa fa-user"></i><span class="sidebar-text">Beneficiarios</span></a>
             </li>
 
 

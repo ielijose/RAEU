@@ -33,13 +33,13 @@ div#dropzone:hover{
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading bg-green">
-                    <h3 class="panel-title"><strong>Nuevo</strong> estudiante</h3>
+                    <h3 class="panel-title"><strong>Nuevo</strong> beneficiario</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
-                            <form action="/estudiantes" method="post" id="student" class="form-horizontal" data-parsley-validate>
+                            <form action="/beneficiarios" method="post" id="student" class="form-horizontal" data-parsley-validate>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Nombre:</label>
                                     <div class="col-sm-10">
@@ -55,16 +55,9 @@ div#dropzone:hover{
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Instituto:</label>
+                                    <label class="col-sm-2 control-label">Instituto/Comunidad:</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="instituto" data-parsley-minlength="1" class="form-control" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Carrera:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="carrera" data-parsley-minlength="1" class="form-control" required>
                                     </div>
                                 </div>
 
@@ -103,7 +96,7 @@ div#dropzone:hover{
 
                                 <div class="col-sm-9 col-sm-offset-3">
                                     <div class="pull-right">
-                                        <a href="/estudiantes" class="btn btn-danger m-b-10">Cancelar</a>
+                                        <a href="/beneficiarios" class="btn btn-danger m-b-10">Cancelar</a>
                                         <button type="submit" class="btn btn-primary m-b-10">Guardar</button>
                                     </div>
                                 </div>

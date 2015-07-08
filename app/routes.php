@@ -41,9 +41,9 @@ Route::group(['before' => 'auth'], function () {
 		Route::resource('ayudas', 'AyudaController');
 		Route::get('/ayudas/aprobar/{id}', 'AyudaController@aprobar');
 
-		Route::resource('estudiantes', 'StudentController');
-		Route::get('/estudiantes/delete/{id}', 'StudentController@destroy');
-		Route::post('/estudiantes/update/{id}', 'StudentController@update');
+		Route::resource('beneficiarios', 'StudentController');
+		Route::get('/beneficiarios/delete/{id}', 'StudentController@destroy');
+		Route::post('/beneficiarios/update/{id}', 'StudentController@update');
 
 		require (__DIR__ . '/routes/shared.php');
 	}

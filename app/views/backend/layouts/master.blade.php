@@ -9,9 +9,9 @@
     <meta charset="utf-8">
 
     @if(Auth::user()->type == 'admin')
-        <title>Administrador - RAEU</title>
+        <title>Administrador - RAEC</title>
     @elseif(Auth::user()->type == 'user')
-        <title>Usuario - RAEU</title>
+        <title>Usuario - RAEC</title>
     @endif
 
     <meta name="viewport" content="width=device-width, initial-scale=1">

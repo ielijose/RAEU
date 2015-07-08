@@ -37,7 +37,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="stat-num">{{ count(Student::all())}}</div>
-                                <a href="/estudiantes"><h3>Estudiantes</h3></a>
+                                <a href="/beneficiarios"><h3>Beneficiarios</h3></a>
 
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="stat-num">Nuevo</div>
-                                <a href="/estudiantes/create"><h3>Alumno</h3></a>
+                                <a href="/beneficiarios/create"><h3>Beneficiario</h3></a>
                             </div>
                         </div>
                     </div>

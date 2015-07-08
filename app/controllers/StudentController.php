@@ -45,9 +45,9 @@ class StudentController extends BaseController {
 		$student = new Student($inputs);
 		if ($student->save())
 		{
-			return Redirect::to('/estudiantes')->with('alert', ['type' => 'success', 'message' => 'El estudiante ha sido guardado.']);;
+			return Redirect::to('/beneficiarios')->with('alert', ['type' => 'success', 'message' => 'El beneficiario ha sido guardado.']);;
 		}
-		return Redirect::to('/estudiantes')->with('alert', ['type' => 'danger', 'message' => 'Ocurrio un error, intenta mas tarde.']);;
+		return Redirect::to('/beneficiarios')->with('alert', ['type' => 'danger', 'message' => 'Ocurrio un error, intenta mas tarde.']);;
 
 	}
 
@@ -86,9 +86,9 @@ class StudentController extends BaseController {
 		$student->fill($inputs);
 		if ($student->save())
 		{
-			return Redirect::to('/estudiantes/' . $id)->with('alert', ['type' => 'success', 'message' => 'Datos guardados.']);
+			return Redirect::to('/beneficiarios/' . $id)->with('alert', ['type' => 'success', 'message' => 'Datos guardados.']);
 		}
-        return Redirect::to('/estudiantes/' . $id)->with('alert', ['type' => 'danger', 'message' => 'Ocurrio un error, intenta mas tarde.']);
+        return Redirect::to('/beneficiarios/' . $id)->with('alert', ['type' => 'danger', 'message' => 'Ocurrio un error, intenta mas tarde.']);
 	}
 
 	/**
@@ -101,7 +101,7 @@ class StudentController extends BaseController {
 	public function destroy($id)
 	{
 		Student::destroy($id);
-		return Redirect::to('/estudiantes')->with('alert', ['type' => 'success', 'message' => 'El estudiante ha sido borrado.']);
+		return Redirect::to('/beneficiarios')->with('alert', ['type' => 'success', 'message' => 'El beneficiario ha sido borrado.']);
 	}
 
 
@@ -128,7 +128,7 @@ class StudentController extends BaseController {
 		if(Input::has('p')){
 			return Redirect::to('/prestamos')->with('alert', ['type' => 'success', 'message' => 'El libro ha sido devuelto.']);
 		}
-		return Redirect::to('/estudiantes/'.$prestamo->student_id)->with('alert', ['type' => 'success', 'message' => 'El libro ha sido devuelto.']);
+		return Redirect::to('/beneficiarios/'.$prestamo->student_id)->with('alert', ['type' => 'success', 'message' => 'El libro ha sido devuelto.']);
 	}
 
 

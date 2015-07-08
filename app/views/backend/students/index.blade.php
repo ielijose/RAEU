@@ -11,14 +11,14 @@
 <div id="main-content">
     @include('backend.layouts.alert')
     <div class="page-title"> <i class="icon-custom-left"></i>
-        <h3 class="pull-left"><strong>Estudiantes</strong></h3>
-        <a href="/estudiantes/create" class="btn btn-success pull-right m-t-10">Ingresar estudiante</a>
+        <h3 class="pull-left"><strong>Beneficiarios</strong></h3>
+        <a href="/beneficiarios/create" class="btn btn-success pull-right m-t-10">Ingresar beneficiario</a>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading bg-blue">
-                    <h3 class="panel-title"><strong>Listado</strong> de estudiantes</h3>
+                    <h3 class="panel-title"><strong>Listado</strong> de beneficiarios</h3>
 
                 </div>
                 <div class="panel-body">
@@ -42,7 +42,7 @@
                                         <td>{{ $student->ci }}</td>
                                         <td>{{ $student->phone }}</td>
                                         <td class="text-center">{{ count($student->ayudas)}}</td>
-                                        <td class="text-center"><a href="/estudiantes/{{ $student->id }}" class="btn btn-info">Ver mas</a></td>
+                                        <td class="text-center"><a href="/beneficiarios/{{ $student->id }}" class="btn btn-info">Ver mas</a></td>
                                     </tr>
                                     @endforeach
 

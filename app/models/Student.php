@@ -11,7 +11,6 @@ class Student extends Model {
 	protected static $rules = [
         'name' => 'required',
 		'ci' => 'required',
-        'carrera' => 'required',
         'instituto' => 'required',
         'gender' => 'required',
         'phone' => 'required',

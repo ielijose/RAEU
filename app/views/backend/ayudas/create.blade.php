@@ -40,7 +40,7 @@ div#dropzone:hover{
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <form action="/ayudas" method="post" id="ayudas" class="form-horizontal" data-parsley-validate>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Estudiante:</label>
+                                    <label class="col-sm-2 control-label">Beneficiario:</label>
                                     <div class="col-sm-10">
                                         <select name="student_id" id="" class="form-control">
                                             <?php $students = Student::all(); ?>

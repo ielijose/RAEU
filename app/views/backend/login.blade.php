@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Acceder :: RAEU</title>
+    <title>Acceder :: RAEC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="" name="description" />
     <meta content="themes-lab" name="author" />

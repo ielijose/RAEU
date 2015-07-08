@@ -7,7 +7,7 @@
     $(".delete-ad").on('click', function(event) {
         event.preventDefault();
 
-        if (confirm("Desea eliminar el estudiante? \nNo se puede revertir.")) {
+        if (confirm("Desea eliminar el beneficiario? \nNo se puede revertir.")) {
             location.href = $(this).attr('href');
         }
     });

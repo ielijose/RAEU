@@ -37,7 +37,7 @@
                     <div class="tab-pane fade active in" id="general">
                         <div class="row">
                             <div class="col-md-12">
-                                <form action="/estudiantes/update/{{ $student->id }}" method="POST" id="product-update" class="form-horizontal">
+                                <form action="/beneficiarios/update/{{ $student->id }}" method="POST" id="product-update" class="form-horizontal">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Nombre:</label>
                                         <div class="col-sm-7">
@@ -54,18 +54,13 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Instituto:</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-2 control-label">Instituto/Comunidad:</label>
+                                        <div class="col-sm-7">
                                             <input type="text" name="instituto" class="form-control"  value="{{ $student->instituto }}" required>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Carrera:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="carrera" class="form-control"  value="{{ $student->carrera }}" required>
-                                        </div>
-                                    </div>
+
 
 
                                     <div class="form-group">
@@ -147,8 +142,8 @@
     </div>
     <div class="row">
         <div class="col-md-12 m-t-20 m-b-40 align-center">
-            <a href="/estudiantes" class="btn btn-default m-r-10 m-t-10"><i class="fa fa-reply"></i> Volver</a>
-            <a href="/estudiantes/delete/{{ $student->id }}" class="btn btn-danger delete-ad m-r-10 m-t-10"><i class="fa fa-times"></i> Eliminar estudiante</a>
+            <a href="/beneficiarios" class="btn btn-default m-r-10 m-t-10"><i class="fa fa-reply"></i> Volver</a>
+            <a href="/beneficiarios/delete/{{ $student->id }}" class="btn btn-danger delete-ad m-r-10 m-t-10"><i class="fa fa-times"></i> Eliminar beneficiario</a>
              <button class="btn btn-success m-t-10" id="submit-update"><i class="fa fa-check"></i> Guardar cambios</button>
         </div>
     </div>

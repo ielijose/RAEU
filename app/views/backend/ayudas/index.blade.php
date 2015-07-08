@@ -30,7 +30,7 @@
                                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-hover table-dynamic no-sort">
                                         <thead>
                                             <tr>
-                                                <th>Estudiante</th>
+                                                <th>Beneficiario</th>
                                                 <th>Tipo</th>
                                                 <th>Descripcion</th>
                                                 <th>Fecha</th>
@@ -40,7 +40,9 @@
                                         <tbody>
                                             @foreach ($ayudas as $key => $ayuda)
                                             <tr>
-                                                <td>{{ $ayuda->student->name }}</td>
+                                                <td>
+                                                    <a href="/beneficiarios/{{ $ayuda->student->id }}" target="_blank">{{ $ayuda->student->name }}</a>
+                                                </td>
                                                 <td>{{ $ayuda->type }}</td>
                                                 <td>{{ $ayuda->description }}</td>
                                                 <td>{{ $ayuda->getHumanDate() }}</td>
